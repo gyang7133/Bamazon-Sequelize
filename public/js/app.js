@@ -34,7 +34,6 @@ const validate = function(item) {
 };
 
 
-
 //this is the document ready function that says to render all the items in the database, to the table.
 $(document).ready(() => {
   $.ajax({
@@ -85,10 +84,10 @@ $(document).ready(() => {
     $('.modal-body').append (`  <table class="table">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Product Id</th>
+        <th scope="col">Product ID</th>
         <th scope="col">Product Name</th>
         <th scope="col">Department</th>
-        <th scope="col">Cost (USD)</th>
+        <th scope="col">Price (USD)</th>
         <th scope="col">Quanity</th>
       </tr>
     </thead>
@@ -109,7 +108,7 @@ $(document).ready(() => {
           
     }
     $(".totalCart").empty();
-    $(".totalCart").append(`<h4>TOTAL PRICE:    $${totalcost}</h4>`)
+    $(".totalCart").append(`<h4>TOTAL PRICE:    $${totalcost.toFixed(2)}</h4>`)
     $(".modal").modal("show");
   });
 
@@ -136,7 +135,7 @@ $(".btnPurchase").on("click", function (){
       console.log(data);
     })
     $('.modal-body').empty();
-    $('.modal-body').append("Purchase approved!")
+    $('.modal-body').append("Purchase Approved! Thank you for buying with us!")
 
   }
   cart= [];
