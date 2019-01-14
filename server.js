@@ -6,7 +6,7 @@ const db = require('./models');
 const app = express();
 
 // Defines a PORT for the server to listen for requests
-var PORT = process.env.PORT || 3300;
+var PORT = process.env.PORT || 3000;
 
 // Sets up our server to parse our request body for usage
 app.use(express.urlencoded({ extended: true }));
