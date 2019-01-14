@@ -2,6 +2,10 @@
     display: none;
   }
   
+  body{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 15px !important;
+  }
   .btn {
     background-color: orange;
     border:none;
@@ -23,4 +27,8 @@
     height: 70px;
   
   }
-  
+/* .bg-light{
+  background-color: #dee2e6 !important;
+} */
+
+

@@ -88,7 +88,7 @@ $(document).ready(() => {
         <th scope="col">Product Name</th>
         <th scope="col">Department</th>
         <th scope="col">Price (USD)</th>
-        <th scope="col">Quanity</th>
+        <th scope="col">Quantity</th>
       </tr>
     </thead>
     <tbody class="tbodymodal table-body"></tbody>
