@@ -1,3 +1,4 @@
+// Defining Tables in DB in Model
 module.exports = function(connection, Sequelize) {
     const Product = connection.define('Product', {
       product_name: {
@@ -10,11 +11,11 @@ module.exports = function(connection, Sequelize) {
       },
       price: {
         type: Sequelize.STRING,
-        defaultValue: 'N/A'
+        allowNull: false
       },
       stock_quantity:{
         type:Sequelize.INTEGER,
-        defaultValue: 'N/A'
+        allowNull: false
       }
     });
   
