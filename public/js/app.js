@@ -1,5 +1,5 @@
+// Function to render all items in a database.
 let cart = [];
-//this is the function to render all items in a database.
 const renderItems = function(items) {
   items.forEach(function(item) {
     let newProduct = $(` <tr>
@@ -18,7 +18,7 @@ const renderItems = function(items) {
 const clearInput = function() {
   $("[id =input]").val("");
 };
-
+// Validate cart and product stocks
 const validate = function(item) {
   if (item.incart.padStart(4,0) > item.instock.padStart(4,0)) {
     $(".alert").removeClass("hide");
@@ -78,13 +78,14 @@ $(document).ready(() => {
     console.table(cart);
   });
 
+// Modal Cart Button function 
   $(".btncart").on("click", function() {
     $(".modal-body").empty();
 
     $('.modal-body').append (`  <table class="table">
     <thead class="thead-dark">
       <tr>
-        <th scope="col">Product ID</th>
+        <th scope="col">ID</th>
         <th scope="col">Product Name</th>
         <th scope="col">Department</th>
         <th scope="col">Price (USD)</th>
@@ -94,7 +95,9 @@ $(document).ready(() => {
     <tbody class="tbodymodal table-body"></tbody>
   </table>
   <div class="totalCart"></div>`);
-    let totalcost = 0;
+    
+  // Calculating Total Cost of Cart
+  let totalcost = 0;
     for (let i = 0; i < cart.length; i++) {
       totalcost += (parseFloat(cart[i].price)*parseFloat(cart[i].incart.padStart(3,0)))
       console.log(cart[i]);
@@ -135,7 +138,7 @@ $(".btnPurchase").on("click", function (){
       console.log(data);
     })
     $('.modal-body').empty();
-    $('.modal-body').append("Purchase Approved! Thank you for buying with us!")
+    $('.modal-body').append("Purchase Approved! Thank you for shopping with us!")
 
   }
   cart= [];
